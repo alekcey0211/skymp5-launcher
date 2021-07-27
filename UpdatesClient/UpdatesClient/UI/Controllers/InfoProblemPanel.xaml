@@ -1,0 +1,56 @@
+﻿<UserControl x:Name="infoPanel" x:Class="UpdatesClient.UI.Controllers.InfoProblemPanel"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:UpdatesClient.UI.Controllers"
+             mc:Ignorable="d" 
+             d:DesignHeight="30"
+             d:DataContext="{d:DesignInstance Type=local:InfoProblemModel}"
+             Visibility="{Binding Path=VisibilityProblem}">
+    <UserControl.Resources>
+        <DrawingImage x:Key="Alert">
+            <DrawingImage.Drawing>
+                <DrawingGroup ClipGeometry="M0,0 V512.001 H512.001 V0 H0 Z">
+                    <DrawingGroup.Transform>
+                        <TranslateTransform X="0.00025004148483276367" Y="0" />
+                    </DrawingGroup.Transform>
+                    <DrawingGroup Opacity="1">
+                        <DrawingGroup Opacity="1">
+                            <GeometryDrawing Brush="#FF000000" Geometry="F1 M512.001,512.001z M0,0z M503.839,395.379L308.139,56.417C297.257,37.569 277.766,26.315 256,26.315 234.235,26.315 214.743,37.569 203.861,56.417L8.162,395.378C-2.721,414.228 -2.721,436.734 8.162,455.583 19.045,474.432 38.535,485.685 60.301,485.685L451.699,485.685C473.464,485.685 492.955,474.431 503.839,455.584 514.722,436.734 514.722,414.228 503.839,395.379z M477.861,440.586C472.4,450.044,462.62,455.69,451.699,455.69L60.301,455.69C49.379,455.69 39.599,450.044 34.139,440.586 28.679,431.128 28.679,419.836 34.139,410.378L229.84,71.416C235.3,61.958 245.08,56.312 256.001,56.312 266.921,56.312 276.702,61.958 282.162,71.416L477.862,410.378C483.321,419.836,483.321,431.128,477.861,440.586z" />
+                        </DrawingGroup>
+                    </DrawingGroup>
+                    <DrawingGroup Opacity="1">
+                        <DrawingGroup Opacity="1">
+                            <GeometryDrawing Brush="#FF000000">
+                                <GeometryDrawing.Geometry>
+                                    <RectangleGeometry RadiusX="0" RadiusY="0" Rect="241.001,176.01,29.996,149.982" />
+                                </GeometryDrawing.Geometry>
+                            </GeometryDrawing>
+                        </DrawingGroup>
+                    </DrawingGroup>
+                    <DrawingGroup Opacity="1">
+                        <DrawingGroup Opacity="1">
+                            <GeometryDrawing Brush="#FF000000" Geometry="F1 M512.001,512.001z M0,0z M256,355.99C244.973,355.99 236.002,364.961 236.002,375.988 236.002,387.015 244.973,395.986 256,395.986 267.026,395.986 275.998,387.015 275.998,375.988 275.998,364.961 267.027,355.99 256,355.99z" />
+                        </DrawingGroup>
+                    </DrawingGroup>
+                </DrawingGroup>
+            </DrawingImage.Drawing>
+        </DrawingImage>
+    </UserControl.Resources>
+    <Grid Background="#00000000" MouseEnter="Grid_MouseEnter" MouseLeave="Grid_MouseLeave">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="32"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Rectangle Fill="White" Margin="5,5,5,5">
+            <Rectangle.Effect>
+                <DropShadowEffect BlurRadius="8" ShadowDepth="0" Color="#FFFF9700"/>
+            </Rectangle.Effect>
+            <Rectangle.OpacityMask>
+                <ImageBrush ImageSource="{DynamicResource Alert}"/>
+            </Rectangle.OpacityMask>
+        </Rectangle>
+        <TextBlock x:Name="text" HorizontalAlignment="Left" Margin="5,6,0,0" TextWrapping="Wrap" Text="{Binding Path=TextProblem}" VerticalAlignment="Top" FontSize="14" Foreground="White" Grid.Column="1"/>
+    </Grid>
+</UserControl>

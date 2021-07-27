@@ -1,0 +1,400 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="CheckSelfUpdate" xml:space="preserve">
+    <value>Checking for launcher updates...</value>
+  </data>
+  <data name="ConnectionError" xml:space="preserve">
+    <value>Problems with connection</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="Crc32_NET" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Crc32.NET.dll;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="CriticalError" xml:space="preserve">
+    <value>Critical error</value>
+  </data>
+  <data name="Details" xml:space="preserve">
+    <value>Details</value>
+  </data>
+  <data name="Done" xml:space="preserve">
+    <value>Done</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="ErrorEndSelfUpdate" xml:space="preserve">
+    <value>Failed to complete update</value>
+  </data>
+  <data name="ErrorReadSkyMPSettings" xml:space="preserve">
+    <value>Failed to read client settings file</value>
+  </data>
+  <data name="ErrorSaveFileBusy" xml:space="preserve">
+    <value>Failed to save, file is busy</value>
+  </data>
+  <data name="ErrorSelfUpdate" xml:space="preserve">
+    <value>Failed to update launcher</value>
+  </data>
+  <data name="ExperimentalFeatures" xml:space="preserve">
+    <value>Experimental features</value>
+  </data>
+  <data name="Extracting" xml:space="preserve">
+    <value>Extracting</value>
+  </data>
+  <data name="ForgotPassword" xml:space="preserve">
+    <value>Forgot your password?</value>
+  </data>
+  <data name="InitError" xml:space="preserve">
+    <value>An unrecoverable error occurred during application initialization</value>
+  </data>
+  <data name="InstallationCompleted" xml:space="preserve">
+    <value>Installation completed</value>
+  </data>
+  <data name="LogIn" xml:space="preserve">
+    <value>Sign in</value>
+  </data>
+  <data name="LogOut" xml:space="preserve">
+    <value>Change user</value>
+  </data>
+  <data name="Microsoft_Bcl_AsyncInterfaces" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Microsoft.Bcl.AsyncInterfaces.dll;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Title</value>
+  </data>
+  <data name="Newtonsoft_Json" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Newtonsoft.Json.dll;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="PasswordRecovery" xml:space="preserve">
+    <value>Password recovery</value>
+  </data>
+  <data name="Register" xml:space="preserve">
+    <value>Registration</value>
+  </data>
+  <data name="RegisterNow" xml:space="preserve">
+    <value>Sign up</value>
+  </data>
+  <data name="RememberMe" xml:space="preserve">
+    <value>Remember me</value>
+  </data>
+  <data name="SelectGameFolder" xml:space="preserve">
+    <value>Select the folder with TES: Skyrim SE</value>
+  </data>
+  <data name="SelfUpdating" xml:space="preserve">
+    <value>Launcher update</value>
+  </data>
+  <data name="Send" xml:space="preserve">
+    <value>Send</value>
+  </data>
+  <data name="Sentry" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Sentry.dll;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Sentry_PlatformAbstractions" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Sentry.PlatformAbstractions.dll;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Sentry_Protocol" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Sentry.Protocol.dll;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="SharpCompress" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SharpCompress.dll;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Successfully" xml:space="preserve">
+    <value>Successfully</value>
+  </data>
+  <data name="System_Buffers" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\System.Buffers.dll;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="System_Memory" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\System.Memory.dll;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="System_Numerics_Vectors" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\System.Numerics.Vectors.dll;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="System_Runtime_CompilerServices_Unsafe" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\System.Runtime.CompilerServices.Unsafe.dll;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="System_Threading_Tasks_Extensions" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\System.Threading.Tasks.Extensions.dll;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Title" xml:space="preserve">
+    <value>SkyMP Launcher</value>
+  </data>
+  <data name="UpdatesClient_ru-RU_resources" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\UpdatesClient.resources.dll;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="UrId" xml:space="preserve">
+    <value>Your id</value>
+  </data>
+  <data name="UserName" xml:space="preserve">
+    <value>Username</value>
+  </data>
+  <data name="Version" xml:space="preserve">
+    <value>Version</value>
+  </data>
+  <data name="Warning" xml:space="preserve">
+    <value>Warning</value>
+  </data>
+  <data name="Yandex_Metrica_NET" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Yandex.Metrica.NET.dll;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="PLAY" xml:space="preserve">
+    <value>PLAY</value>
+  </data>
+  <data name="UPDATE" xml:space="preserve">
+    <value>UPDATE</value>
+  </data>
+  <data name="INSTALL" xml:space="preserve">
+    <value>INSTALL</value>
+  </data>
+  <data name="RETRY" xml:space="preserve">
+    <value>RETRY</value>
+  </data>
+  <data name="CompatibilityModeOn" xml:space="preserve">
+    <value>Probably the target server is outdated, the compatibility mode is used </value>
+  </data>
+  <data name="CompatibilityModeOff" xml:space="preserve">
+    <value>Perhaps the target server is outdated, because I did not answer the request </value>
+  </data>
+  <data name="DownloadModError" xml:space="preserve">
+    <value>One or more mods could not be downloaded from the server </value>
+  </data>
+  <data name="ActivateCode" xml:space="preserve">
+    <value>Activate code </value>
+  </data>
+  <data name="Common" xml:space="preserve">
+    <value>General </value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Description </value>
+  </data>
+  <data name="DisableMods" xml:space="preserve">
+    <value>Disable platform </value>
+  </data>
+  <data name="DisableSKSE" xml:space="preserve">
+    <value>Disable SKSE</value>
+  </data>
+  <data name="EmailEmpty" xml:space="preserve">
+    <value>Email field is empty</value>
+  </data>
+  <data name="EmailExists" xml:space="preserve">
+    <value>The specified email address is already exists</value>
+  </data>
+  <data name="EmailInvalid" xml:space="preserve">
+    <value>Invalid email format</value>
+  </data>
+  <data name="GameNotFound" xml:space="preserve">
+    <value>(the game is not found) </value>
+  </data>
+  <data name="InstallDo" xml:space="preserve">
+    <value>Install</value>
+  </data>
+  <data name="Installing" xml:space="preserve">
+    <value>Installation </value>
+  </data>
+  <data name="Language" xml:space="preserve">
+    <value>Language</value>
+  </data>
+  <data name="LoginFailed" xml:space="preserve">
+    <value>Wrong email or password</value>
+  </data>
+  <data name="Market" xml:space="preserve">
+    <value>Store</value>
+  </data>
+  <data name="Mods" xml:space="preserve">
+    <value>Mods</value>
+  </data>
+  <data name="News" xml:space="preserve">
+    <value>News</value>
+  </data>
+  <data name="Notifications" xml:space="preserve">
+    <value>NOTIFICATIONS</value>
+  </data>
+  <data name="Parameters" xml:space="preserve">
+    <value>Parameters </value>
+  </data>
+  <data name="PasswordEmpty" xml:space="preserve">
+    <value>Password field is empty</value>
+  </data>
+  <data name="PasswordLonger" xml:space="preserve">
+    <value>Password should be longer than 6 characters </value>
+  </data>
+  <data name="PathToSkyrimSE" xml:space="preserve">
+    <value>Path to the root folder Skyrim SE: </value>
+  </data>
+  <data name="RequiredSpace" xml:space="preserve">
+    <value>Space required: </value>
+  </data>
+  <data name="Servers" xml:space="preserve">
+    <value>Server list</value>
+  </data>
+  <data name="SKSENotFound" xml:space="preserve">
+    <value>not found (will be installed) </value>
+  </data>
+  <data name="UserExists" xml:space="preserve">
+    <value>The user with the same name already exists </value>
+  </data>
+  <data name="UsernameEmpty" xml:space="preserve">
+    <value>Login filed is empty</value>
+  </data>
+  <data name="UsernameLonger" xml:space="preserve">
+    <value>Login must be longer than 2 characters </value>
+  </data>
+  <data name="UsernameShoter" xml:space="preserve">
+    <value>Login must be shorter than 32 characters </value>
+  </data>
+  <data name="ViewProfile" xml:space="preserve">
+    <value>View Profile </value>
+  </data>
+  <data name="ServerFavorite" xml:space="preserve">
+    <value>Favorite</value>
+  </data>
+  <data name="ServerLanguage" xml:space="preserve">
+    <value>Language</value>
+  </data>
+  <data name="ServerPing" xml:space="preserve">
+    <value>Ping</value>
+  </data>
+  <data name="ServerPlayers" xml:space="preserve">
+    <value>Players</value>
+  </data>
+  <data name="ServerSettings" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="ServerName" xml:space="preserve">
+    <value>Server name</value>
+  </data>
+  <data name="Fastenshtein" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Fastenshtein.dll;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="CloseAll" xml:space="preserve">
+    <value>Clear</value>
+  </data>
+  <data name="SkyEye" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SkyEye.dll;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Authorization" xml:space="preserve">
+    <value>Authorization</value>
+  </data>
+</root>

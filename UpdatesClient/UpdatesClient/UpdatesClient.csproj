@@ -1,0 +1,504 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{08FA46E3-1D90-4CCE-BDC1-49A1FD429579}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>UpdatesClient</RootNamespace>
+    <AssemblyName>UpdatesClient</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>false</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;UNMANAGED</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;UNMANAGED</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Assets\Images\favicon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>
+    </StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'DeRelease|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\DeRelease\</OutputPath>
+    <DefineConstants>TRACE;UNMANAGED</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Crc32.NET, Version=1.0.0.0, Culture=neutral, PublicKeyToken=dc0b95cf99bf4e99, processorArchitecture=MSIL">
+      <HintPath>..\packages\Crc32.NET.1.2.0\lib\net20\Crc32.NET.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Fastenshtein, Version=1.0.0.7, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Fastenshtein.1.0.0.7\lib\net452\Fastenshtein.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.1.1.1\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="PresentationFramework.Aero2" />
+    <Reference Include="Sentry, Version=2.1.6.0, Culture=neutral, PublicKeyToken=fba2ec45388e2af0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sentry.2.1.6\lib\net461\Sentry.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Sentry.PlatformAbstractions, Version=1.1.1.0, Culture=neutral, PublicKeyToken=fba2ec45388e2af0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sentry.PlatformAbstractions.1.1.1\lib\net471\Sentry.PlatformAbstractions.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Sentry.Protocol, Version=2.1.6.0, Culture=neutral, PublicKeyToken=fba2ec45388e2af0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sentry.Protocol.2.1.6\lib\net46\Sentry.Protocol.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="SharpCompress, Version=0.26.0.0, Culture=neutral, PublicKeyToken=afb0a02973931d96, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpCompress.0.26.0\lib\net46\SharpCompress.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="SkyEye, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Resources\SkyEye.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.6.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.7.1\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Remoting" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="Yandex.Metrica.NET, Version=3.5.1.0, Culture=neutral, PublicKeyToken=21e4d3bd28ff137d, processorArchitecture=MSIL">
+      <HintPath>..\packages\Yandex.Metrica.3.5.1\lib\net45\Yandex.Metrica.NET.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Core\Enums\Locales.cs" />
+    <Compile Include="Core\Enums\MainButtonStatus.cs" />
+    <Compile Include="Core\EnvParams.cs" />
+    <Compile Include="Core\Graphics.cs" />
+    <Compile Include="Core\Helpers\JsonModelSaver.cs" />
+    <Compile Include="Core\IO.cs" />
+    <Compile Include="Core\LocalesManager.cs" />
+    <Compile Include="Modules\Notifications\Enums\NotificationType.cs" />
+    <Compile Include="Modules\Notifications\Models\NotificationsModel.cs" />
+    <Compile Include="Modules\Notifications\Models\NotifyModel.cs" />
+    <Compile Include="Modules\Downloader\Models\ProgressBarModel.cs" />
+    <Compile Include="Modules\GameManager\Model\ServerManifest\ServerModModel.cs" />
+    <Compile Include="Modules\GameManager\Model\ServerManifest\ServerModsManifest.cs" />
+    <Compile Include="Modules\Configs\DefaultPaths.cs" />
+    <Compile Include="Modules\Debugger\DebuggerUtilities.cs" />
+    <Compile Include="Modules\Debugger\SentryManager.cs" />
+    <Compile Include="Modules\Debugger\YandexMetricaManager.cs" />
+    <Compile Include="Modules\Configs\Helpers\ExperimentalFunctions.cs" />
+    <Compile Include="Modules\Configs\Models\NetworkSettingsModel.cs" />
+    <Compile Include="Modules\Configs\NetworkSettings.cs" />
+    <Compile Include="Modules\Downloader\DownloadManager.cs" />
+    <Compile Include="Modules\Downloader\Models\DownloadModel.cs" />
+    <Compile Include="Modules\GameManager\GameUtilities.cs" />
+    <Compile Include="Modules\GameManager\Helpers\GameCleaner.cs" />
+    <Compile Include="Modules\GameManager\Helpers\ProcessKiller.cs" />
+    <Compile Include="Modules\ModsManager\Enums\SymbolicLink.cs" />
+    <Compile Include="Modules\ModsManager\Models\ModModel.cs" />
+    <Compile Include="Modules\ModsManager\Models\ModsModel.cs" />
+    <Compile Include="Modules\ModsManager\Mods.cs" />
+    <Compile Include="Modules\ModsManager\ModUtilities.cs" />
+    <Compile Include="Modules\ModsManager\WinFunctions.cs" />
+    <Compile Include="Modules\ModulesManager.cs" />
+    <Compile Include="Modules\Notifications\Models\WNotifyModel.cs" />
+    <Compile Include="Modules\Recovery\GameCleaner.cs" />
+    <Compile Include="Modules\Recovery\Models\GameManifestModel.cs" />
+    <Compile Include="Modules\Recovery\UI\RecoveryWindow.xaml.cs">
+      <DependentUpon>RecoveryWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\SelfUpdater\Models\VersionStatus.cs" />
+    <Compile Include="Modules\SelfUpdater\Net.cs" />
+    <Compile Include="Properties\Resources.ru-RU.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.ru-RU.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Downloader\Downloader.cs" />
+    <Compile Include="Core\Libraries\SingleInstanceApp\ISingleInstance.cs" />
+    <Compile Include="Core\Libraries\SingleInstanceApp\NativeMethods.cs" />
+    <Compile Include="Core\Libraries\SingleInstanceApp\SingleInstance.cs" />
+    <Compile Include="Core\Libraries\SingleInstanceApp\WM.cs" />
+    <Compile Include="Modules\Security\AesEncoder.cs" />
+    <Compile Include="Modules\Security\Extensions\SecureString.cs" />
+    <Compile Include="Core\Helpers\PasswordBoxMonitor.cs" />
+    <Compile Include="Core\Network\Account.cs" />
+    <Compile Include="Core\Network\Models\Request\ReqLoginModel.cs" />
+    <Compile Include="Core\Network\Models\Request\ReqRegisterModel.cs" />
+    <Compile Include="Core\Network\Models\Request\ReqResetPassword.cs" />
+    <Compile Include="Core\Network\Models\Request\ReqVerifyRegisterModel.cs" />
+    <Compile Include="Core\Network\Models\Response\ResLoginModel.cs" />
+    <Compile Include="Core\Network\Models\Response\ResRegisterModel.cs" />
+    <Compile Include="Core\Network\Models\Response\ResVerifyRegisterModel.cs" />
+    <Compile Include="Modules\Security\SHA256Hashing.cs" />
+    <Compile Include="Modules\Security\SystemFunctions.cs" />
+    <Compile Include="Modules\SelfUpdater\SelectLanguage.xaml.cs">
+      <DependentUpon>SelectLanguage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Controllers\Header.xaml.cs">
+      <DependentUpon>Header.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Controllers\InfoProblemPanel.xaml.cs">
+      <DependentUpon>InfoProblemPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Controllers\MainButton.xaml.cs">
+      <DependentUpon>MainButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Controllers\ServerBlock\ServerDescription.xaml.cs">
+      <DependentUpon>ServerDescription.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Controllers\ServerBlock\ServerMods.xaml.cs">
+      <DependentUpon>ServerMods.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Controllers\ServerBlock\ServerPlayers.xaml.cs">
+      <DependentUpon>ServerPlayers.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Controllers\ServerItemGrid.xaml.cs">
+      <DependentUpon>ServerItemGrid.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Controllers\ServerListGrid.xaml.cs">
+      <DependentUpon>ServerListGrid.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Pages\Authorization.xaml.cs">
+      <DependentUpon>Authorization.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Pages\MainWindow\Models\MainWindowModel.cs" />
+    <Compile Include="UI\Pages\MainWindow\Models\ServerListModel.cs" />
+    <Compile Include="UI\Pages\MainWindow\Models\ServerItemModel.cs" />
+    <Compile Include="UI\Pages\MainWindow\Models\SettingsPanelModel.cs" />
+    <Compile Include="UI\Pages\MainWindow\ServerList.xaml.cs">
+      <DependentUpon>ServerList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Pages\MainWindow\SettingsPanel.xaml.cs">
+      <DependentUpon>SettingsPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Pages\Models\AuthModels\AuthModel.cs" />
+    <Compile Include="UI\Pages\Models\AuthModels\FormModel.cs" />
+    <Compile Include="UI\Pages\Models\AuthModels\RecPswrdModel.cs" />
+    <Compile Include="UI\Pages\Models\AuthModels\RegModel.cs" />
+    <Compile Include="UI\Windows\InstallerWindow.xaml.cs">
+      <DependentUpon>InstallerWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Windows\InstallerWindowModels\InstallerWindowModel.cs" />
+    <Page Include="Assets\Images\Images.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Modules\Recovery\UI\RecoveryWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Modules\SelfUpdater\SelectLanguage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\Controllers\Header.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\Controllers\InfoProblemPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\Controllers\MainButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\Controllers\ServerBlock\ServerDescription.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\Controllers\ServerBlock\ServerMods.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\Controllers\ServerBlock\ServerPlayers.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\Controllers\ServerItemGrid.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\Controllers\ServerListGrid.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\Dictionary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\Pages\Authorization.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Compile Include="Core\Helpers\RoundProgressPathConverter.cs" />
+    <Compile Include="Core\IniFile.cs" />
+    <Compile Include="Core\Models\SkympClientSettingsModel.cs" />
+    <Compile Include="Core\Models\ServerModel.cs" />
+    <Compile Include="Modules\Debugger\Logger.cs" />
+    <Compile Include="Core\Net.cs" />
+    <Compile Include="Modules\Notifications\NotifyController.cs" />
+    <Compile Include="Core\Unpacker.cs" />
+    <Compile Include="Modules\Configs\Models\ModVersionModel.cs" />
+    <Compile Include="Modules\Configs\Models\SettingsFileModel.cs" />
+    <Compile Include="Modules\Configs\ModVersion.cs" />
+    <Compile Include="Modules\Configs\Settings.cs" />
+    <Compile Include="Modules\GameManager\AntiCheat\FileWatcher.cs" />
+    <Compile Include="Modules\GameManager\Enums\FileType.cs" />
+    <Compile Include="Modules\GameManager\GameLauncher.cs" />
+    <Compile Include="Modules\GameManager\GameVerification.cs" />
+    <Compile Include="Modules\GameManager\Helpers\ProcessExtensions.cs" />
+    <Compile Include="Modules\GameManager\Model\ResultGameVerification.cs" />
+    <Compile Include="UI\Controllers\InfoBottomPanel.xaml.cs">
+      <DependentUpon>InfoBottomPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Controllers\NotifyList.xaml.cs">
+      <DependentUpon>NotifyList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Controllers\OnlineButton.xaml.cs">
+      <DependentUpon>OnlineButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Notifications\UI\PopupNotify.xaml.cs">
+      <DependentUpon>PopupNotify.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Downloader\UI\ProgressBar.xaml.cs">
+      <DependentUpon>ProgressBar.xaml</DependentUpon>
+    </Compile>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Modules\SelfUpdater\SplashScreen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\Controllers\InfoBottomPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\Controllers\NotifyList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\Controllers\OnlineButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Modules\Notifications\UI\PopupNotify.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Modules\Downloader\UI\ProgressBar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\Pages\MainWindow\ServerList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\Pages\MainWindow\SettingsPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\Windows\InstallerWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Modules\SelfUpdater\Downloader.cs" />
+    <Compile Include="Modules\SelfUpdater\Hashing.cs" />
+    <Compile Include="Modules\SelfUpdater\Security.cs" />
+    <Compile Include="Modules\SelfUpdater\SplashScreen.xaml.cs">
+      <DependentUpon>SplashScreen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\SelfUpdater\Updater.cs" />
+    <Compile Include="Modules\SelfUpdater\WinFunctions.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.ru-RU.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.ru-RU.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\app.manifest" />
+    <None Include="Properties\Settings.settings">
+      <Generator>PublicSettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Assets\Debug\" />
+    <Folder Include="Assets\Fonts\" />
+    <Folder Include="Core\Structs\" />
+    <Folder Include="Modules\News\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Images\favicon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 и x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\UpdatesClient.resources.dll" />
+    <None Include="Resources\Yandex.Metrica.NET.dll" />
+    <None Include="Resources\Crc32.NET.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Images\Banners\Default.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Images\Backgrounds\Background1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Images\Banners\Installer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Images\ServerIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Fastenshtein.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SkyEye.dll" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

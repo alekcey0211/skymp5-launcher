@@ -1,0 +1,21 @@
+﻿<UserControl x:Class="UpdatesClient.UI.Controllers.InfoBottomPanel"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:UpdatesClient.UI.Controllers"
+             mc:Ignorable="d" 
+             d:DesignHeight="70" d:DesignWidth="687">
+    <Grid>
+        <Rectangle Height="70" VerticalAlignment="Bottom">
+            <Rectangle.Fill>
+                <RadialGradientBrush Center="0.5,1" RadiusY="0.8" GradientOrigin="0.5,1">
+                    <GradientStop Offset="1" Color="#005E5525"/>
+                    <GradientStop Color="#FF5E5525"/>
+                    <GradientStop Color="#B25E5525" Offset="0.5"/>
+                </RadialGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <TextBlock x:Name="textBlock" Margin="70,0,70,7" TextWrapping="Wrap" Text="15 АВГУСТА С 9.00 ДО 15.00 ПО МСК БУДУТ ПРОВОДИТЬСЯ ПЛАНОВЫЕ ТЕХ. РАБОТЫ" VerticalAlignment="Bottom" FontFamily="Corbel" FontSize="14" Foreground="#FFFCFF00" TextAlignment="Center"/>
+    </Grid>
+</UserControl>

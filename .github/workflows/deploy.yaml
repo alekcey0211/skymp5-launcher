@@ -1,0 +1,49 @@
+on:
+  push:
+    branches:
+      - master
+jobs:
+  build-win:
+    runs-on: windows-latest
+    env:
+      ACTIONS_ALLOW_UNSECURE_COMMANDS: true
+    steps:
+    - uses: actions/checkout@master
+    - name: Setup MSBuild.exe
+      uses: warrenbuckley/Setup-MSBuild@v1
+    - name: Setup VSWhere.exe
+      uses: warrenbuckley/Setup-VSWhere@v1
+    - name: Setup Nuget.exe
+      uses: warrenbuckley/Setup-Nuget@v1
+    - name: Nuget Restore
+      working-directory: UpdatesClient
+      run: nuget restore .\UpdatesClient.sln
+    - name: MSBuild
+      working-directory: UpdatesClient/UpdatesClient
+      run: msbuild UpdatesClient.csproj /property:Configuration=Release
+    - uses: actions/upload-artifact@master
+      with:
+        name: executable
+        path: UpdatesClient/UpdatesClient/bin/Release/UpdatesClient.exe
+    - uses: actions/upload-artifact@master
+      with:
+        name: backend
+        path: backend
+  build:
+    needs: [build-win]
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/download-artifact@v2
+    - name: Display structure of downloaded files
+      run: ls -R .
+    - run: mv ./executable/UpdatesClient.exe ./backend/launcher/SkyMPLauncher.exe
+    - run: docker build --tag updates-client ./backend
+    - name: Push to ECR
+      id: ecr
+      uses: jwalton/gh-ecr-push@v1
+      with:
+        access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        region: eu-west-3
+        local-image: updates-client
+        image: updates-client:latest
